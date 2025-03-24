@@ -1,8 +1,8 @@
 import React from 'react'
 
-function TimerDisplay() {
+function TimerDisplay({time}) {
   return (
-    <div className='timer-display'>00:00</div>
+    <div className='timer-display'>{time}</div>
   )
 }
 

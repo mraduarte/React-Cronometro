@@ -1,10 +1,10 @@
 import React from 'react'
 
-function TimerControls() {
+function TimerControls({onStart, onStop}) {
   return (
     <div className='timer-controls'>
-        <button>Iniciar</button>
-        <button>Zerar</button>
+        <button onClick={onStart}>Iniciar</button>
+        <button onClick={onStop}>Zerar</button>
     </div>
   )
 }
