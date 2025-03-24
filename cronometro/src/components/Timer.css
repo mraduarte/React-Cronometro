@@ -4,17 +4,22 @@
     place-items: center;
     min-height: 50vh;
     width: 400px;
-    background-color: #f5f5f5;
+    background-color: #F4F3F2;
     padding: 20px;
     font-family: Arial;
+    border-radius: 20px;
+    border: 2px solid #bdbcbc;
+    box-shadow: 0 2px 6px #bdbcbc;
 }
 
 .timer-display{
-    border: 2px solid #333;
+    border: 2px solid #bdbcbc;
     padding: 20px;
     margin: 20px;
     font-size: 48px;
-    background-color: #fff;
+    background-color: #d9f3e7;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px #bdbcbc;
 }
 
 .timer-controls{
@@ -23,7 +28,7 @@
 }
 
 .timer-controls button{
-    background-color: #007bff;
+    background-color: #FC912E;
     border: none;
     color: #fff;
     padding: 15px 32px;
@@ -31,6 +36,7 @@
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .timer-controls button:hover{

@@ -20,7 +20,7 @@ function Timer() {
         return `${minutes}:${seconds}:${centiseconds}`;
     };
 
-    const startTimer = (interval) => {
+    const startTimer = () => {
         return setInterval(() => {
             setMilliseconds((prevMilliseconds) => prevMilliseconds + 10);
         }, 10);
@@ -29,6 +29,16 @@ function Timer() {
     const stopTimer = (interval) => {
         clearInterval(interval);
         return interval;
+    }
+
+    const resetTimer = () => {
+        setMilliseconds(0);
+        setTimerOn(false);
+        setLaps([]);
+    }
+
+    const addLap = () => {
+        setLaps([...laps, formatTime()]);
     }
 
     useEffect(() => {
@@ -46,8 +56,13 @@ function Timer() {
     return (
     <div className='timer-container'>
         <TimerDisplay time={formatTime()}/>
-        <TimerControls onStart={() => setTimerOn(true)} onStop={() => setTimerOn(false)}/>
-        <LapList/>
+        <TimerControls 
+            timerOn={timerOn}
+            onStart={() => setTimerOn(true)} 
+            onStop={() => setTimerOn(false)}
+            onReset={resetTimer}
+            onLap={addLap}/>
+        <LapList laps={laps}/>
     </div>
     )
 }
